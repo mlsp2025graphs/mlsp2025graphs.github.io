@@ -6,6 +6,7 @@
     <title>Geometric and Topological Representation Learning - MLSP 2025 Tutorial</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.min.js"></script>
 </head>
 <body>
     <header class="header">
@@ -49,46 +50,50 @@
                 <h2 class="section-title">Resources</h2>
                                 
                 <h3>Slides</h3>
-                <p>Tutorial slides will be made available here after the presentation.</p>
+                <p>Tutorial slides are available for preview below and download in <a href="assets/MLSP GNN Tutorial (Final).pptx" target="_blank" class="format-link">PPTX</a> and <a href="assets/MLSP GNN Tutorial (PDF compatible).pdf" target="_blank" class="format-link">PDF</a> formats.</p>
+                
+                <div class="pdf-controls">
+                    <button id="prevPage" class="pdf-nav-btn">Previous</button>
+                    <button id="nextPage" class="pdf-nav-btn">Next</button>
+                    <div class="pdf-page-info">
+                        <input type="number" id="pageInput" class="page-input" value="1" min="1">
+                        <span class="page-separator">/</span>
+                        <span id="pageCount">...</span>
+                    </div>
+                </div>
                 
                 <div class="slide-viewer">
-                    <p><em>Slides will be available in PDF format</em></p>
+                    <div id="pdfContainer">
+                        <canvas id="pdfCanvas"></canvas>
+                        <div id="pdfLoading" class="pdf-loading">Loading page...</div>
+                        <div id="pdfError" class="pdf-error" style="display: none;">
+                            <p>Unable to display PDF. <a href="assets/MLSP GNN Tutorial (PDF compatible).pdf" target="_blank">Download the PDF</a> to view the slides.</p>
+                            <button id="fallbackBtn" class="fallback-btn" style="margin-top: 1rem;">Try Alternative Viewer</button>
+                        </div>
+                        <iframe id="pdfFallback" src="" width="100%" height="600px" type="application/pdf" style="display: none;">
+                        </iframe>
+                    </div>
                 </div>
                 
                 <h3>Code and Examples</h3>
-                <p>Interactive Jupyter notebooks demonstrating the concepts covered in the tutorial are available through Google Colab:</p>
-                
+                <div>Interactive Jupyter notebooks demonstrating the concepts covered in the tutorial are available through Google Colab.                            Three-part series covering Graph Neural Networks, Graph Transformers, and SE(3) Equivariant Networks with hands-on examples and implementations.</div>
                 <div class="notebook-links">
                     <div class="notebook-item">
-                        <h4>Part 1: Graph Neural Networks</h4>
-                        <p>Introduction to GNNs, message passing, and fundamental graph learning concepts.</p>
                         <a href="https://colab.research.google.com/drive/11M2S4fPrsZhv_h_d0xBkk6NuQmO4dRPE?usp=sharing" target="_blank" rel="noopener" class="colab-link">
                             <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab">
-                            tutorial_part1_gnn.ipynb
+                            Part 1: GNNs
                         </a>
-                    </div>
-                    
-                    <div class="notebook-item">
-                        <h4>Part 2: Graph Transformers</h4>
-                        <p>Advanced architectures and attention mechanisms for graph representation learning.</p>
                         <a href="https://colab.research.google.com/drive/1xcpv9z6cIqkbtUoz3CGrI90wrpOHNwB-?usp=sharing" target="_blank" rel="noopener" class="colab-link">
                             <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab">
-                            tutorial_part2_gt.ipynb
+                            Part 2: Graph Transformers
                         </a>
-                    </div>
-                    
-                    <div class="notebook-item">
-                        <h4>Part 3: SE(3) Equivariant Networks</h4>
-                        <p>Geometric deep learning with SE(3) equivariance.</p>
                         <a href="https://colab.research.google.com/drive/11K6nL4QJ_o-IsArnM3jgb9U36Uz6sIkJ?usp=sharing" target="_blank" rel="noopener" class="colab-link">
                             <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab">
-                            tutorial_part3_se3.ipynb
+                            Part 3: SE(3) Networks
                         </a>
                     </div>
                 </div>
                 
-                <h3>Reading List</h3>
-                <p>A comprehensive reading list of relevant papers and resources for geometric and topological representation learning will be available for participants who want to dive deeper into the topics covered.</p>
             </div>
         </section>
 
