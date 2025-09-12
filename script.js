@@ -275,7 +275,7 @@ function setupFallbackViewer() {
             console.log('Switching to fallback iframe viewer');
             canvas.style.display = 'none';
             errorDiv.style.display = 'none';
-            iframe.src = 'assets/MLSP GNN Tutorial (PDF compatible).pdf#page=' + currentPage;
+            iframe.src = 'assets/MLSP GNN Tutorial.pdf#page=' + currentPage;
             iframe.style.display = 'block';
             
             // Update navigation to work with iframe
@@ -287,7 +287,7 @@ function setupFallbackViewer() {
                 prevBtn.onclick = function() {
                     if (currentPage > 1) {
                         currentPage--;
-                        iframe.src = 'assets/MLSP GNN Tutorial (PDF compatible).pdf#page=' + currentPage;
+                        iframe.src = 'assets/MLSP GNN Tutorial.pdf#page=' + currentPage;
                         updateNavigationState();
                     }
                 };
@@ -295,7 +295,7 @@ function setupFallbackViewer() {
                 nextBtn.onclick = function() {
                     if (currentPage < totalPages) {
                         currentPage++;
-                        iframe.src = 'assets/MLSP GNN Tutorial (PDF compatible).pdf#page=' + currentPage;
+                        iframe.src = 'assets/MLSP GNN Tutorial.pdf#page=' + currentPage;
                         updateNavigationState();
                     }
                 };
@@ -306,7 +306,7 @@ function setupFallbackViewer() {
                         const targetPage = parseInt(this.value);
                         if (targetPage && targetPage >= 1 && targetPage <= totalPages) {
                             currentPage = targetPage;
-                            iframe.src = 'assets/MLSP GNN Tutorial (PDF compatible).pdf#page=' + currentPage;
+                            iframe.src = 'assets/MLSP GNN Tutorial.pdf#page=' + currentPage;
                             updateNavigationState();
                         } else {
                             this.value = currentPage;
@@ -390,13 +390,13 @@ document.addEventListener('DOMContentLoaded', async function() {
                     errorDiv.style.display = 'block';
                     const errorMsg = errorDiv.querySelector('p');
                     if (errorMsg) {
-                        errorMsg.innerHTML = 'PDF loading is taking longer than expected. <a href="assets/MLSP GNN Tutorial (PDF compatible).pdf" target="_blank">Download the PDF</a> or try the alternative viewer below.';
+                        errorMsg.innerHTML = 'PDF loading is taking longer than expected. <a href="assets/MLSP GNN Tutorial.pdf" target="_blank">Download the PDF</a> or try the alternative viewer below.';
                     }
                 }
             }, 10000); // 10 second timeout
             
             try {
-                await loadPDF('assets/MLSP GNN Tutorial (PDF compatible).pdf');
+                await loadPDF('assets/MLSP GNN Tutorial.pdf');
                 clearTimeout(loadingTimeout);
             } catch (error) {
                 clearTimeout(loadingTimeout);
